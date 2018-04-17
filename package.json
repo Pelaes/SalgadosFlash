@@ -1,0 +1,17 @@
+{
+  "name": "salgadosflash.com.br",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass css/estilo.scss css/estilo.css",
+    "sass.min": "node-sass css/estilo.scss css/estilo.min.css --output-style compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}
