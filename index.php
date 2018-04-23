@@ -11,60 +11,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl bg-gradient-primary navbar-dark">
-        <div class="container">
-            <a class="navbar-brand h1" href="#">Logotipo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <div class="mr-auto">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Página Inicial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="cardapio.html" class="nav-link">Cardápio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Kit Festa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Equipe</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="btn btn-success btn-block mb-3 mb-xl-0">Entre ou cadastre-se</a>
-                    </ul>
-                </div>
-                <div class="ml-auto">
-                    <form action="#">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <input class="form-control mr-5 mb-3 mb-xl-0" type="text" placeholder="Busque algo gostoso">
-                            </li>
-                            <li class="nav-item">
-                                <button class="btn btn-success btn-block ml-xl-4 mb-3 mb-xl-0" type="submit">Buscar</button>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-                <div class="ml-auto">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="btn btn-outline-success mb-3 mb-xl-0">
-                                <img src="imagens/carrinho.png" alt="Carrinho de compras">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+    <?php
+        include 'cabecalho.php';
+    ?>
     <div class="carousel-item active">
         <img src="imagens/salgados1.png" alt="salgados" class="img-fluid d-block">
         <div class="carousel-caption text-light d-none d-xl-block">
@@ -115,6 +64,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
+                <div>
+                    <h1 class="text-center">
+                        <a class="nav-link" href="cardapio.html#salgados">Salgados</a>
+                    </h1>
+                    <h5 class="text-center">Deliciosos salgados!</h5>
+                </div>
                 <div id="CarrosselSite" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#CarrosselSite" data-slide-to="0" class="active"></li>
@@ -124,26 +79,14 @@
                     <div class="carousel-inner mt-4">
                         <div class="carousel-item active">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>
-                                    <a href="cardapio.html#salgados">Salgados</a>
-                                </h1>
-                                <p class="d-none d-md-block">Deliciosos salgados!</p>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Salgados</h1>
-                                <p class="d-none d-md-block">Deliciosos salgados!</p>
-                            </div>
+                            
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption ">
-                                <h1>Salgados</h1>
-                                <p class="d-none d-md-block">Deliciosos salgados!</p>
-                            </div>
+                            
                         </div>
                     </div>
                     <div>
@@ -159,6 +102,12 @@
                 </div>
             </div>
             <div class="col-sm-4">
+                <div>
+                    <h1 class="text-center">
+                        <a class="nav-link" href="cardapio.html#doces">Bolos e doces</a>
+                    </h1>
+                    <h5 class="text-center">Adoce seu dia!</h5>
+                </div>
                 <div id="CarrosselSite2" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#CarrosselSite2" data-slide-to="0" class="active"></li>
@@ -168,24 +117,12 @@
                     <div class="carousel-inner mt-4">
                         <div class="carousel-item active">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Bolos e Doces</h1>
-                                <p class="d-none d-md-block">Adoce seu dia!</p>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Bolos e Doces</h1>
-                                <p class="d-none d-md-block">Adoce seu dia!</p>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Bolos e Doces</h1>
-                                <p class="d-none d-md-block">Adoce seu dia!</p>
-                            </div>
                         </div>
                     </div>
                     <div>
@@ -201,6 +138,12 @@
                 </div>
             </div>
             <div class="col-sm-4">
+                <div>
+                    <h1 class="text-center">
+                        <a class="nav-link" href="cardapio.html#doces">Kit festa</a>
+                    </h1>
+                    <h5 class="text-center">Montamos sua festa!</h5>
+                </div>
                 <div id="CarrosselSite3" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#CarrosselSite3" data-slide-to="0" class="active"></li>
@@ -210,24 +153,12 @@
                     <div class="carousel-inner mt-4">
                         <div class="carousel-item active">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Kit Festa</h1>
-                                <p class="d-none d-md-block">Montamos sua festa!</p>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Kit Festa</h1>
-                                <p class="d-none d-md-block">Montamos sua festa!</p>
-                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            <div class="carousel-caption">
-                                <h1>Kit Festa</h1>
-                                <p class="d-none d-md-block">Montamos sua festa!</p>
-                            </div>
                         </div>
                     </div>
                     <div>
@@ -267,58 +198,10 @@
     </div>
 
     <!--Modal de cadastro-->
-    <div class="modal fade" id="cadastro" tabindex="-1" role="dialog">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h5 class="modal-title">Complete seus dados de entrega</h5>
-                    <!--
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
-                     -->
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <center>
-                            <div class="form-row">
-                                <div class="form-group col-lg-4">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="cidade">
-                                </div>
-                                <div class="form-group col-lg-5">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="bairro">
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="cep">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-lg-9">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="Endereço">
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="Número">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-lg-3">
-                                    <button class="btn btn-primary form-control btn-lg" type="submit">Voltar</button>
-                                </div>
-                                <div class="form-group col-lg-9">
-                                    <button class="btn btn-primary form-control btn-lg" type="submit">BUSCAR</button>
-                                </div>
-                            </div>
-
-                        </center>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
+    <?php
+        include 'modal_endereco.php';
+        include 'modal_indisponivel.php';
+    ?>
 
 
 
