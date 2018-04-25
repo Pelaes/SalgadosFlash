@@ -25,7 +25,7 @@
         <div>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="btn btn-success btn-block mb-3 mb-xl-0">Entre ou cadastre-se</a>
+                    <a href="login.php" class="btn btn-success btn-block mb-3 mb-xl-0">Entre ou cadastre-se</a>
                 </li>
             </ul>
         </div>
