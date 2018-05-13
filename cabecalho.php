@@ -23,11 +23,23 @@
             </ul>
         </div>
         <div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="login.php" class="btn btn-success btn-block mb-3 mb-xl-0">Entre ou cadastre-se</a>
-                </li>
-            </ul>
+            <?php
+            if(isset($_SESSION['logado'])){
+                $nome = $_SESSION['logado'];
+                echo    '<ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="login.php" class="btn btn-success btn-block mb-3 mb-xl-0">'.$nome.'</a>
+                            </li>
+                        </ul>';
+            }
+            else{
+                echo    '<ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="login.php" class="btn btn-success btn-block mb-3 mb-xl-0">Entre ou cadastre-se</a>
+                            </li>
+                        </ul>';
+            }
+            ?>
         </div>
         <div class="ml-auto">
             <form>

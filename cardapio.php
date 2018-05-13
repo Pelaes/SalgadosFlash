@@ -13,6 +13,7 @@
 <body>
     <!-- Barra de navegação - INICIO-->
         <?php
+            session_start();
             include 'cabecalho.php';
         ?>
     <!-- Barra de navegação - FIM-->

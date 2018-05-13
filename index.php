@@ -12,6 +12,7 @@
 
 <body>
     <?php
+        session_start();
         include 'cabecalho.php';
     ?>
     <div class="carousel-item active">
@@ -33,7 +34,7 @@
     </div>
 
     <!--Formulário-->
-    <div class="jumbotron">
+    <div class="jumbotron" id="pesquisaCEP">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center my-4">
@@ -42,14 +43,14 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-8 col-lg-6 ">
-                    <form>
+                    <form action="PesquisarCep.php" method="POST">
                         <center>
                             <div class="form-row">
                                 <div class="form-group col-lg-9">
-                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="Digite seu CEP">
+                                    <input type="text" class="form-control form-control-lg" id="CEP" placeholder="Digite seu CEP" name="CEP">
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <button type="button" class="btn btn-primary form-control btn-lg" data-toggle="modal" data-target="#cadastro">BUSCAR</button>
+                                    <input type="submit" class="btn btn-primary form-control btn-lg" value="Buscar">
                                 </div>
                             </div>
                         </center>
@@ -66,7 +67,7 @@
             <div class="col-sm-4">
                 <div>
                     <h1 class="text-center">
-                        <a class="nav-link" href="cardapio.html#salgados">Salgados</a>
+                        <a class="nav-link" href="cardapio.php#salgados">Salgados</a>
                     </h1>
                     <h5 class="text-center">Deliciosos salgados!</h5>
                 </div>
@@ -104,7 +105,7 @@
             <div class="col-sm-4">
                 <div>
                     <h1 class="text-center">
-                        <a class="nav-link" href="cardapio.html#doces">Bolos e doces</a>
+                        <a class="nav-link" href="cardapio.php#doces">Bolos e doces</a>
                     </h1>
                     <h5 class="text-center">Adoce seu dia!</h5>
                 </div>
@@ -140,7 +141,7 @@
             <div class="col-sm-4">
                 <div>
                     <h1 class="text-center">
-                        <a class="nav-link" href="cardapio.html#doces">Kit festa</a>
+                        <a class="nav-link" href="cardapio.php#doces">Kit festa</a>
                     </h1>
                     <h5 class="text-center">Montamos sua festa!</h5>
                 </div>
@@ -197,18 +198,77 @@
         </div>
     </div>
 
-    <!--Modal de cadastro-->
+    <!--Incluindo arquivos de modais-->
     <?php
         include 'modal_endereco.php';
         include 'modal_indisponivel.php';
+        include 'modal_campos_vazios.php';
+        include 'modal_disponivel.php';
     ?>
-
-
-
 
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Mostra modal de erro caso campo esteja vazio ou cep incorreto-->
+    <?php
+        if(isset($_SESSION['erro']))
+        {
+    ?>
+        <script>
+            $(document).ready(function(){
+                $('#vazio').modal('show');
+            }); 
+        </script>
+    <?php
+        unset ($_SESSION['erro']); 
+        }
+    ?>
+
+    <!-- Mostra modal de endereço com valores do banco-->
+    <?php
+        if(isset($_SESSION['local']))
+        {
+    ?>
+        <script>
+            $(document).ready(function(){
+                $('#cadastro').modal('show');
+            }); 
+        </script>
+    <?php
+        unset ($_SESSION['local']); 
+        }
+    ?>
+
+    <!-- Mostra modal de disponibilidade ou não-->
+    <?php
+        if(isset($_SESSION['disponivel']))
+        {
+    ?>
+        <script>
+            $(document).ready(function(){
+                $('#valido').modal('show');
+            }); 
+        </script>
+    <?php
+        unset ($_SESSION['disponivel']); 
+        }
+    ?>
+
+    <?php
+        if(isset($_SESSION['indisponivel']))
+        {
+    ?>
+        <script>
+            $(document).ready(function(){
+                $('#invalido').modal('show');
+            }); 
+        </script>
+    <?php
+        unset ($_SESSION['indisponivel']); 
+        }
+    ?>
+    
 </body>
 
 </html>

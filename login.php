@@ -22,6 +22,7 @@
 
 <body>
     <?php
+        session_start();
         include 'cabecalho.php';
     ?>
         <div class="row">
@@ -33,39 +34,40 @@
                     <div class="col-lg-12 text-center my-4">
                         <h1 class="display-4">Faça seu cadastro!</h1>
                     </div>
-                    <form>
+                    
+                    <form action="CadastroUsuario.php" method="POST">
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu nome">
+                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu nome" name="nome">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu Email">
+                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu Email" name="email">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Digite sua senha">
+                                <input class="form-control form-control-lg" type="password" placeholder="Digite sua senha" name="senha">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Confirme sua senha">
+                                <input class="form-control form-control-lg" type="password" placeholder="Confirme sua senha" name="confirmar">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-lg-2 my-3 ml-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="DDD">
+                                <input class="form-control form-control-lg" type="text" placeholder="DDD" name="ddd">
                             </div>
                             <div class="form-group col-lg-7 my-3 mr-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Seu telefone">
+                                <input class="form-control form-control-lg" type="text" placeholder="Seu telefone" name="telefone">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
                                 <div class="custom-control form-control-lg custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" name="termo">
                                     <label class="ml-2 custom-control-label" for="customCheck1"><a href="#">Li e concordo com os termos de uso.</a></label>
                                 </div>
                             </div>
@@ -86,15 +88,15 @@
                     <div class="col-lg-12 text-center my-4">
                         <h1 class="display-4">Já sou cadastrado!</h1>
                     </div>
-                    <form>
+                    <form action="LoginCliente.php" method="POST">
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu Email">
+                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu Email" name="user">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
-                                <input class="form-control form-control-lg" type="text" placeholder="Digite seu senha">
+                                <input class="form-control form-control-lg" type="password" placeholder="Digite seu senha" name="pass">
                             </div>
                         </div>
 
@@ -112,13 +114,29 @@
                 </div>
             </aside>
         </div>
-
-
+                        
+        <?php                    
+            include 'modal_campos_vazios.php';
+        ?>
 
 
         <script src="./node_modules/jquery/dist/jquery.js"></script>
         <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+        <?php
+            if(!empty($_SESSION['erro']))
+            {
+        ?>
+        <script>
+            $(document).ready(function(){
+                $('#vazio').modal('show');
+            });   
+        </script>
+        <?php
+            unset ($_SESSION['erro']); 
+            }
+        ?>
 </body>
 
 </html>
