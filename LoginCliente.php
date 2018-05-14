@@ -36,6 +36,11 @@
     else{
         $nome = explode(" ", $linha['nome']);
         $_SESSION['logado'] = $nome[0];
+        $_SESSION['cod'] = $linha['cod'];
+        $_SESSION['nome'] = $linha['nome'];
+        $_SESSION['email'] = $linha['email'];
+        $_SESSION['ddd'] = $linha['ddd'];
+        $_SESSION['telefone'] = $linha['telefone'];
         $_SESSION['erro'] = "Bem vindo " . $nome[0];
         header ("Location: login.php");
     }
