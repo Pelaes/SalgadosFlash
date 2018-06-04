@@ -28,7 +28,7 @@
                 $nome = $_SESSION['logado'];
                 echo    '<ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="login.php" class="btn btn-success btn-block mb-3 mb-xl-0">'.$nome.'</a>
+                                <a href="dados-cadastrais.php" class="btn btn-success btn-block mb-3 mb-xl-0">Bem vindo(a) '.$nome.'</a>
                             </li>
                         </ul>';
             }
@@ -56,8 +56,15 @@
         <div class="ml-auto">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="btn btn-outline-success mb-3 mb-xl-0">
+                    <a href="carrinho.php" class="btn btn-outline-success mb-3 mb-xl-0 mx-sm-auto d-block">
                         <img src="imagens/carrinho.png" alt="Carrinho de compras">
+                        <?php
+                            if(isset($_SESSION['indice'])){
+                        ?>
+                                <span class="ml-1 badge badge-light"><?php echo $_SESSION['indice']?></span>
+                        <?php
+                            }
+                        ?>
                     </a>
                 </li>
             </ul>

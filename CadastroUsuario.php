@@ -8,54 +8,46 @@
     $conf_senha = $_POST['confirmar'];
     $ddd = $_POST['ddd'];
     $telefone = $_POST['telefone'];
-    $termo_uso = $_POST['termo'];
+    //$termo_uso = $_POST['termo'];
+    
     
     if (empty($nome))
     {
-       $_SESSION['erro'] = "Preencha o campo nome!";
-       header ("Location: login.php");
-       die();
+        echo "ErroNome";     
+        die();
     }
-    if ($email == "")
+    if (empty($email))
     {
-       $_SESSION['erro'] = "Preencha o campo email!";
-       header ("Location: login.php");
-       die();
+        echo "ErroEmail";
+        die();
     }
-    if ($senha == "")
+    if (empty($senha))
     {
-       $_SESSION['erro'] = "Preencha o campo senha!";
-       header ("Location: login.php");
-       die();
+        echo "ErroSenha";
+        die();
     }
-    if ($conf_senha == "")
+    if (empty($conf_senha))
     {
-       $_SESSION['erro'] = "Confirme sua senha!";
-       header ("Location: login.php");
-       die();
+        echo "ErroConf";
+        die();
     }
-    if ($ddd == "")
+    if (empty($ddd))
     {
-       $_SESSION['erro'] = "Preencha o campo DDD!";
-       header ("Location: login.php");
-       die();
+        echo "ErroDDD";
+        die();
     }
-    if ($telefone == "")
+    if (empty($telefone))
     {
-       $_SESSION['erro'] = "Preencha o campo telefone!";
-       header ("Location: login.php");
-       die();
+        echo "ErroTel";
+        die();
     }
-    if ($termo_uso == "")
-    {
-       $_SESSION['erro'] = "Leia e aceite os termos de uso!";
-       header ("Location: login.php");
-       die();
+    if(!isset($_POST['termo'])){
+        echo "ErroTermo";
+        die();
     }
     if($senha != $conf_senha)
     {
-        $_SESSION['erro'] = "As senhas não conferem!";
-        header ("Location: login.php");
+        echo "ErroConfere";
         die();
     }
 
@@ -67,6 +59,6 @@
     $sql -> close();
     $conn -> close();
 
-    $_SESSION['erro'] = "Cadastrado com sucesso!";
-    header ("Location: login.php");
+    echo "Sucesso";
+    die();
 ?>

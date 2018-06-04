@@ -14,22 +14,27 @@
                 <form action="verifica_endereco.php" method="POST">
                     <center>
                         <div class="form-row">
-                            <div class="form-group col-lg-4">
-                                <input type="text" class="form-control form-control-lg" id="cidade" placeholder="Cidade" value="<?php echo $_SESSION['cidade']?>">
-                            </div>
-                            <div class="form-group col-lg-5">
-                                <input type="text" class="form-control form-control-lg" id="bairro" placeholder="Bairro" value="<?php echo $_SESSION['bairro']?>">
-                            </div>
-                            <div class="form-group col-lg-3">
-                                <input type="text" class="form-control form-control-lg" id="CEP" placeholder="CEP" value="<?php echo $_SESSION['cep']?>">
+                            <div class="form-group col-lg-12">
+                                <input type="text" class="form-control form-control-lg" id="endereco" placeholder="Endereço" value="<?php echo $_SESSION['rua']?>">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-lg-9">
-                                <input type="text" class="form-control form-control-lg" id="endereco" placeholder="Endereço" value="<?php echo $_SESSION['rua']?>">
+                            <div class="form-group col-lg-5">
+                                <input type="text" class="form-control form-control-lg" id="bairro" placeholder="Bairro" value="<?php echo $_SESSION['bairro']?>">
                             </div>
+                            <div class="form-group col-lg-5">
+                                <input type="text" class="form-control form-control-lg" id="cidade" placeholder="Cidade" value="<?php echo $_SESSION['cidade']?>">
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <input type="text" class="form-control form-control-lg" id="UF" placeholder="UF" value="<?php echo $_SESSION['estado']?>">
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group col-lg-3">
                                 <input type="text" class="form-control form-control-lg" id="numero" placeholder="Número" name="num">
+                            </div>
+                            <div class="form-group col-lg-9">
+                                <input type="text" class="form-control form-control-lg" id="complemento" placeholder="Complemento">
                             </div>
                         </div>
                         <div class="form-row">

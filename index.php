@@ -7,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Salgados Flash</title>
     <link rel="stylesheet" href="./css/estilo.css">
-
+    <style>
+        .imgCarr{
+            width : 350px;
+            height : 350px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,9 +22,9 @@
     ?>
     <div class="carousel-item active">
         <img src="imagens/salgados1.png" alt="salgados" class="img-fluid d-block">
-        <div class="carousel-caption text-light d-none d-xl-block">
-            <h1 style="font-size:80px">BEM-VINDO A SALGADOS FLASH</h1>
-            <h3 style="font-size:60px">O melhor salgado da região</h3>
+        <div class="carousel-caption text- d-none d-xl-block">
+            <h1 class="display-1">BEM-VINDO A SALGADOS FLASH</h1>
+            <h3 class="display-3">O melhor salgado da região</h3>
         </div>
     </div>
     <div class="text-dark d-xl-none">
@@ -79,15 +84,13 @@
                     </ol>
                     <div class="carousel-inner mt-4">
                         <div class="carousel-item active">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
+                            <img src="imagens/individual.webp" class="img-fluid d-block imgCarr">
                         </div>
                         <div class="carousel-item">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            
+                            <img src="imagens/comboindividual.webp" class="img-fluid d-block imgCarr">
                         </div>
                         <div class="carousel-item">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
-                            
+                            <img src="imagens/combofamilia.webp" class="img-fluid d-block imgCarr">
                         </div>
                     </div>
                     <div>
@@ -117,13 +120,13 @@
                     </ol>
                     <div class="carousel-inner mt-4">
                         <div class="carousel-item active">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
+                            <img src="imagens/bolo.webp" class="img-fluid d-block imgCarr">
                         </div>
                         <div class="carousel-item">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
+                            <img src="imagens/boloespecial.webp" class="img-fluid d-block imgCarr">
                         </div>
                         <div class="carousel-item">
-                            <img src="imagens/salgados1.png" class="img-fluid d-block">
+                            <img src="imagens/bolopasta.webp" class="img-fluid d-block imgCarr">
                         </div>
                     </div>
                     <div>
@@ -197,6 +200,9 @@
             </div>
         </div>
     </div>
+    <?php
+        include 'rodape.html';
+    ?>
 
     <!--Incluindo arquivos de modais-->
     <?php
@@ -268,7 +274,7 @@
         unset ($_SESSION['indisponivel']); 
         }
     ?>
-    
+
 </body>
 
 </html>

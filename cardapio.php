@@ -12,9 +12,10 @@
 
 <body>
     <!-- Barra de navegação - INICIO-->
-        <?php
+    <?php
             session_start();
             include 'cabecalho.php';
+            include 'modal_campos_vazios.php';
         ?>
     <!-- Barra de navegação - FIM-->
 
@@ -52,10 +53,12 @@
                             <br>
                         </h6>
                         <br>
-                        <a href="#" class="btn btn-outline-success btn-block card-link">
-                            <label class="mr-3 mt-2">R$ 12,90</label>
-                            <img src="imagens/carrinho.png" alt="Carrinho de compras">
-                        </a>
+                        <form action="add_item.php">
+                            <button class="btn btn-outline-success btn-block card-link">
+                                <label class="mr-3 mt-2">R$ 12,90</label>
+                                <img src="imagens/carrinho.png" alt="Carrinho de compras">
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -273,15 +276,28 @@
             </div>
         </div>
     </div>
-
-    
-    
-
-
+    <?php
+        include 'rodape.html';
+    ?>
 
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <?php
+        if(isset($_SESSION['erro']))
+        {
+    ?>
+    <script>
+        $(document).ready(function () {
+            $('#vazio').modal('show');
+        }); 
+    </script>
+    <?php
+        unset ($_SESSION['erro']); 
+        }
+    ?>
+
 </body>
 
 </html>

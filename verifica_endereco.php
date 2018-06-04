@@ -3,7 +3,7 @@
 
     $num = $_POST['num'];
 
-    if($num == "")
+    if(empty($num))
     {
         $_SESSION['erro'] = "Digite o numero do local de entrega!";
         header ("Location: index.php#pesquisaCEP");

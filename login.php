@@ -18,6 +18,7 @@
             text-decoration: none;
         }
     </style>
+
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                         <h1 class="display-4">Faça seu cadastro!</h1>
                     </div>
                     
-                    <form action="CadastroUsuario.php" method="POST">
+                    <form action="CadastroUsuario.php" method="POST" id="cadastro">
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
                                 <input class="form-control form-control-lg" type="text" placeholder="Digite seu nome" name="nome">
@@ -67,7 +68,7 @@
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
                                 <div class="custom-control form-control-lg custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1" name="termo">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" value="1" name="termo" selected>
                                     <label class="ml-2 custom-control-label" for="customCheck1"><a href="#">Li e concordo com os termos de uso.</a></label>
                                 </div>
                             </div>
@@ -88,7 +89,7 @@
                     <div class="col-lg-12 text-center my-4">
                         <h1 class="display-4">Já sou cadastrado!</h1>
                     </div>
-                    <form action="LoginCliente.php" method="POST">
+                    <form action="LoginCliente.php" method="POST" id="login">
                         <div class="form-row">
                             <div class="col-lg-9 my-3 mx-auto">
                                 <input class="form-control form-control-lg" type="text" placeholder="Digite seu Email" name="user">
@@ -114,9 +115,13 @@
                 </div>
             </aside>
         </div>
+        <?php
+            include 'rodape.html';
+        ?>
                         
         <?php                    
             include 'modal_campos_vazios.php';
+            include 'modal_valida_cadastro.html';
         ?>
 
 
@@ -124,19 +129,23 @@
         <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
+        <script src="js/validacao_cadastro.js"></script>
+        <script src="js/login_cliente.js"></script>
+
         <?php
-            if(!empty($_SESSION['erro']))
-            {
+        if(isset($_SESSION['erro']))
+        {
         ?>
         <script>
             $(document).ready(function(){
                 $('#vazio').modal('show');
-            });   
+            }); 
         </script>
         <?php
-            unset ($_SESSION['erro']); 
-            }
+        unset ($_SESSION['erro']); 
+        }
         ?>
+        
 </body>
 
 </html>

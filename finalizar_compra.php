@@ -1,17 +1,23 @@
 <?php
-    session_start();
-    include_once 'conexao.php';
-    
-    $cep = $_POST['CEP'];
-    
-    if($cep == "")
-    {
-        $_SESSION['erro'] = "Digite um cep para pesquisa";
-        header ("Location: index.php#pesquisaCEP");
-        die();
-    }
-    
-    $sql = $conn->prepare( "SELECT cep as _CEP, rua as _RUA, bairro as _BAIRRO, CID.nome as _CID, EST.sigla as _EST, entrega as _ENT 
+
+session_start();
+include 'conexao.php';
+
+if(!isset($_SESSION['logado'])){
+    $_SESSION['erro'] = "Faça login no site!";
+    header("Location: login.php");
+    die();
+}
+
+$cep = $_GET['var'];
+
+if(empty($cep)){
+    $_SESSION['erro'] = "CEP não informado";
+    header("Location: carrinho.php");
+    die(); 
+}
+
+$sql = $conn->prepare( "SELECT cep as _CEP, rua as _RUA, bairro as _BAIRRO, CID.nome as _CID, EST.sigla as _EST, entrega as _ENT 
                             FROM Enderecos ED 
                             INNER JOIN Cidades CID ON CID.cod = ED.fk_cidade 
                             INNER JOIN Estados EST ON EST.cod = ED.fk_estado 
@@ -27,7 +33,7 @@
     if(empty($linha))
     {
         $_SESSION['erro'] = "Não achamos esse CEP! Verifique o número.";
-        header ("Location: index.php#pesquisaCEP");
+        header ("Location: carrinho.php");
         die();
     }
     else
@@ -38,11 +44,13 @@
         $_SESSION['cidade'] = $linha['_CID'];
         $_SESSION['estado'] = $linha['_EST'];
         $_SESSION['entrega'] = $linha['_ENT'];
-        $_SESSION['local'] = true;
-        header("Location: index.php#pesquisaCEP");
+        $_SESSION['frete'] = 7.50;
+        header("Location: resumo_compra.php");
     }
 
     $sql -> close();
     $conn -> close();
+
+
 
 ?>

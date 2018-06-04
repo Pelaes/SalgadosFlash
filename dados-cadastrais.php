@@ -14,9 +14,16 @@
     <?php
         session_start();
         include 'cabecalho.php';
+        if(!isset($_SESSION['logado'])){
+            header("Location: index.php");
+        }
     ?>
     <div class="container">
-        <h3 class="mt-3">Meu Perfil</h3>
+        <div class="form-row my-3">
+            <h3>Meu Perfil</h3>
+            <a href="deslogar.php" class="btn btn-outline-primary ml-auto mr-1">Sair</a>
+        </div>
+
         <div aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active" aria-current="page">Informações Pessoais</li>
@@ -31,7 +38,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-lg-8 mr-auto ml-auto">
-                    <input type="text" class="form-control form-control-lg" id="email" value="<?php echo $_SESSION['email']?>">
+                    <input type="text" class="form-control form-control-lg" readonly="readonly" id="email" value="<?php echo $_SESSION['email']?>">
                 </div>
             </div>
             <div class="form-row">
@@ -64,17 +71,17 @@
         <form>
             <div class="form-row">
                 <div class="form-group col-lg-8 mr-auto ml-auto">
-                    <input type="text" class="form-control form-control-lg" id="senha" placeholder="Senha atual">
+                    <input type="password" class="form-control form-control-lg" id="txtNome" placeholder="Senha atual">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-lg-8 mr-auto ml-auto">
-                    <input type="text" class="form-control form-control-lg" id="senha" placeholder="Nova senha">
+                    <input type="password" class="form-control form-control-lg" id="senha" placeholder="Nova senha">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-lg-8 ml-auto mr-auto">
-                    <input type="text" class="form-control form-control-lg" id="novasenha" placeholder="Confirme a senha">
+                    <input type="password" class="form-control form-control-lg" id="novasenha" placeholder="Confirme a senha">
                 </div>
             </div>
             <div class="form-row">
@@ -82,15 +89,23 @@
 
                 </div>
                 <div class="form-group col-lg-4 mr-auto">
-                    <input type="submit" class="form-control btn btn-primary btn-lg" value="Salvar nova senha">
+                    <input type="button" class="form-control btn btn-primary btn-lg" onclick="fn_Erro();" value="Salvar nova senha">
                 </div>
             </div>
         </form>
     </div>
 
+    <?php
+        include 'rodape.html';
+        include 'modal_valida_cadastro.html';
+    ?>
+
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="js/login_cliente.js"></script>
+
 </body>
 
 </html>
